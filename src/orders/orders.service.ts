@@ -184,6 +184,9 @@ export class OrdersService {
     updateOrderDto: UpdateOrderStatusDto,
   ): Promise<RequestResponse> {
     try {
+      if (updateOrderDto) {
+      }
+
       const result = await this.orderRepository.update(id, updateOrderDto);
       if (result.affected === 0) {
         return {
